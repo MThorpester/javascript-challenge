@@ -1,7 +1,7 @@
 // Get the UFO report data from data.js
 var UFOdata = data;
 
-// Get a reference to the table body
+// Get a reference to the table body in the index.html file
 var tbody = d3.select("tbody");
 
 // For each UFO report, add a row to the table
@@ -48,11 +48,11 @@ function runEnter() {
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
 
-  console.log(inputValue);
+  // console.log(inputValue);
   
   var filteredData = UFOdata.filter(sighting => sighting.datetime === inputValue);
 
-  console.log(filteredData);
+  // console.log(filteredData);
   // If there are sightings to display for this date, then display them
   // Otherwise, display a message to the user
   if (filteredData.length > 0) {
