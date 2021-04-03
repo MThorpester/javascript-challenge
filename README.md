@@ -14,6 +14,6 @@ It consists of:
 
 To run this aplication simply launch the index.html file with your browser. 
 
-[Level 1 Image: ](https://github.com/MThorpester/javascript-challenge/blob/main/UFO-level-2/static/images/Level_2_preview.jpg)
+[Level 1 Image: ](https://github.com/MThorpester/javascript-challenge/blob/main/UFO-level-1/static/Level_1_preview.jpg)
 
 [Level 2 Image: ](https://github.com/MThorpester/javascript-challenge/blob/main/UFO-level-2/static/images/Level_2_preview.jpg)

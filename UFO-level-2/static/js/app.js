@@ -28,7 +28,11 @@ var resetbutton = d3.select("#reset-btn");
 // Select the form
 var form = d3.select("#form");
 
+// Select filters 
+var filters = d3.selectAll('.filter')
+
 // Create the event handlers 
+filters.on('change', runEnter);
 filterbutton.on("click", runEnter);
 form.on("submit",runEnter);
 resetbutton.on("click", function() {
@@ -42,7 +46,7 @@ resetbutton.on("click", function() {
 function runEnter() {
   // Prevent the page from refreshing
   d3.event.preventDefault();
- // console.log("Entered the runEnter function");
+  // console.log("Entered the runEnter function");
  // Select the input element and get the raw HTML node then get the value property of the input element
   var InputDate = d3.select("#datetime");
   var DateInput = InputDate.property("value");
