@@ -34,33 +34,39 @@ form.on("submit",runEnter);
 resetbutton.on("click", function() {
     displaySightings(UFOdata);
     document.getElementById("datetime").value="";
+    document.getElementById("city").value="";
+    document.getElementById("state").value="";
 });
 
 // The query function........
 function runEnter() {
-
   // Prevent the page from refreshing
   d3.event.preventDefault();
+ // console.log("Entered the runEnter function");
+ // Select the input element and get the raw HTML node then get the value property of the input element
+  var InputDate = d3.select("#datetime");
+  var DateInput = InputDate.property("value");
+  var InputCity = d3.select("#city");
+  var CityInput = InputCity.property("value").toLowerCase();
+  var InputState = d3.select("#state");
+  var StateInput = InputState.property("value").toLowerCase();
   
-  // Select the input element and get the raw HTML node
-  var inputElement = d3.select("#datetime");
-
-  // Get the value property of the input element
-  var inputValue = inputElement.property("value");
-
-  // console.log(inputValue);
-  
-  var filteredData = UFOdata.filter(sighting => sighting.datetime === inputValue);
-
-  // console.log(filteredData);
-  // If there are sightings to display for this date, then display them
+  if (DateInput) { 
+    var filteredData = UFOdata.filter(sighting => sighting.datetime === DateInput);
+  }
+  else if (CityInput) {
+        var filteredData = UFOdata.filter(sighting => sighting.city === CityInput);
+        }
+        else if(StateInput) {
+            var filteredData = UFOdata.filter(sighting => sighting.state === StateInput); 
+        }
+  // If there are sightings to display for this search criteria, then display them
   // Otherwise, display a message to the user
   if (filteredData.length > 0) {
     displaySightings(filteredData);
   }
   else {
       tbody.html("");
-      tbody.append("tr").append("td").text("Sorry...there are no sightings for this date.");
+      tbody.append("tr").append("td").text("Sorry...there are no sightings for this search criteria.");
   }
- 
 }

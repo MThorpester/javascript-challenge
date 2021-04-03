@@ -7,6 +7,7 @@ This web application initially displays all available reports of UFO sightings. 
 It consists of:
 - a Javascript file (app.js) 
 - an HTML file (index.html)
+- a file of UFO sightings (data.js)
 - various Bootstrap CSS, image and Jquery files
 
 ## Getting Started
